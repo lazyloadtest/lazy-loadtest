@@ -1,0 +1,1 @@
+*/30 * * * * sh ~/lazy-loadtest/mhddos_proxy/run_mhddos.sh >/dev/null 2>&1
