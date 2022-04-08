@@ -43,7 +43,7 @@ services:
       interval: 30s
       retries: 3
   db1000n:
-    image: ghcr.io/arriven/db1000n
+    image: ghcr.io/arriven/db1000n:latest
     container_name: db1000n
     restart: unless-stopped
     depends_on:
