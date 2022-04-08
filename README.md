@@ -7,7 +7,7 @@ Some of the tools deployed by these scripts have not been tested and I do not kn
 Light touch deployment of load testing tools.
 
 ## What to do
-Fork this repository and make it private, make the noted changes and deploy
+[Duplicate](https://docs.github.com/en/repositories/creating-and-managing-repositories/duplicating-a-repository) this repository and make it private, make the noted changes and deploy
 
 ## Prerequisites 
 - A cloud VM. This should work on Digital Ocean using a **Fedora image** (yum is assumed to be the package manager) or AWS Linux. Note that if you use Digital Ocean you should use a [SSH key](https://docs.digitalocean.com/products/droplets/how-to/add-ssh-keys/) (these scripts assume you are using this method).
