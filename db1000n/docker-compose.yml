@@ -10,7 +10,7 @@ services:
     command: --interval "14400" --cleanup
   autoheal:
     container_name: autoheal
-    image: willfarrell/autoheal
+    image: willfarrell/autoheal:1.2.0
     restart: always
     privileged: true
     volumes:
