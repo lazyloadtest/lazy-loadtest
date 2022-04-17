@@ -1,5 +1,5 @@
 #!/bin/bash
-# need to modify runuser line if not on ec2 as variables does not parse
+source /etc/environment
 sudo yum install docker -y
 sudo usermod -aG docker $ENDUSER
 sudo systemctl enable docker.service docker.socket
