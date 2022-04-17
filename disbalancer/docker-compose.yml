@@ -54,4 +54,4 @@ services:
         autoheal: "true"
 secrets:
   provider_secret:
-    file: ~/secrets/provider_secret
+    file: ${GITPATH}/vpn/provider_secret
