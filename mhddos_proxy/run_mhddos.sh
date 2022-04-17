@@ -9,7 +9,7 @@ CreateContainer()
     docker rm -f mhddos_proxy_http
     docker run -d --name mhddos_proxy_tcp --rm ghcr.io/porthole-ascend-cinnamon/mhddos_proxy:latest -t 1000 $(curl $BASE_URL |grep addr | cut -d'"' -f 4 | sed 's/^/tcp:\/\//')
     docker run -d --name mhddos_proxy_http --rm ghcr.io/porthole-ascend-cinnamon/mhddos_proxy:latest -t 1000 $(curl $BASE_URL |grep path | cut -d'"' -f 4)
-    sudo echo "Restarted at $(date)" >> /var/log/restart.log
+    sudo echo "Restarted at $(date)" >> /tmp/restart.log
 }
 # first run check
 if [ ! -f "$ORIGINAL_TARGET" ]
