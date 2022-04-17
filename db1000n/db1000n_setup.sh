@@ -11,6 +11,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 mkdir /home/$ENDUSER/secrets
 mkdir -p /home/$ENDUSER/docker/openvpn
 cp $GITPATH/db1000n/docker-compose.yml /home/$ENDUSER/docker/
+cp $GITPATH/db1000n/user-crontab /var/spool/cron/$ENDUSER
 cp $GITPATH/vpn/provider_*.conf /home/$ENDUSER/docker/openvpn/
 cp $GITPATH/vpn/provider_secret /home/$ENDUSER/secrets/
 chown -R $ENDUSER.$ENDUSER /home/$ENDUSER
