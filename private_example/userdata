@@ -1,0 +1,3 @@
+# add after public clone
+git clone https://GITHUB_TOKEN@github.com/GITHUB_USER/lazy-loadtest-private /home/$ENDUSER/lazy-loadtest-private
+sh /home/$ENDUSER/lazy-loadtest-private/private-update.sh

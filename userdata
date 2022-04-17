@@ -25,6 +25,9 @@ GITPATH=/home/$ENDUSER/lazy-loadtest
 sudo yum update -y
 sudo yum install git -y
 git clone https://github.com/lazyloadtest/lazy-loadtest.git $GITPATH
+
+# Pull in VPN password and config files here
+
 chown -R $ENDUSER.$ENDUSER /home/$ENDUSER
 sh $GITPATH/common/docker_setup.sh
 
