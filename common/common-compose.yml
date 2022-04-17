@@ -45,3 +45,4 @@ services:
       timeout: 10s
       interval: 30s
       retries: 3
+#Add app here
