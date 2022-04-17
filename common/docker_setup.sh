@@ -11,4 +11,3 @@ mkdir /home/$ENDUSER/secrets
 mkdir -p /home/$ENDUSER/docker/openvpn
 cp $GITPATH/vpn/provider_*.conf /home/$ENDUSER/docker/openvpn/
 cp $GITPATH/vpn/provider_secret /home/$ENDUSER/secrets/
-chown -R $ENDUSER.$ENDUSER /home/$ENDUSER

@@ -1,0 +1,10 @@
+  disbalancer:
+    image: disbalancer/liberator:manifest-latest
+    container_name: disbalancer
+    restart: unless-stopped
+    depends_on:
+      openvpn-client:
+        condition: service_healthy
+    network_mode: service:openvpn-client
+    labels:
+        autoheal: "true"

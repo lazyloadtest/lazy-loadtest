@@ -1,4 +1,7 @@
 version: "3.9"
+secrets:
+  provider_secret:
+    file: ~/secrets/provider_secret
 services:
   watchtower:
     container_name: watchtower
@@ -42,16 +45,3 @@ services:
       timeout: 10s
       interval: 30s
       retries: 3
-  disbalancer:
-    image: disbalancer/liberator:manifest-latest
-    container_name: disbalancer
-    restart: unless-stopped
-    depends_on:
-      openvpn-client:
-        condition: service_healthy
-    network_mode: service:openvpn-client
-    labels:
-        autoheal: "true"
-secrets:
-  provider_secret:
-    file: ~/secrets/provider_secret
