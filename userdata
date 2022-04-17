@@ -21,9 +21,6 @@ fi
 # Set environment variables
 ENDUSER=$(id -u -n 1000)
 GITPATH=/home/$ENDUSER/lazy-loadtest
-echo ENDUSER=$ENDUSER >> /etc/environment
-echo GITPATH=$GITPATH >> /etc/environment
-source /etc/environment
 # Install git and clone repo
 sudo yum update -y
 sudo yum install git -y

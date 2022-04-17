@@ -25,7 +25,7 @@ services:
     restart: unless-stopped
     volumes:
       - /dev/net:/dev/net:z
-      - ${GITPATH}/vpn/:/data/vpn:z
+      - ~/docker/openvpn/:/data/vpn:z
     sysctls:
       - net.ipv6.conf.all.disable_ipv6=1
     environment:
@@ -54,4 +54,4 @@ services:
         autoheal: "true"
 secrets:
   provider_secret:
-    file: ${GITPATH}/vpn/provider_secret
+    file: ~/secrets/provider_secret

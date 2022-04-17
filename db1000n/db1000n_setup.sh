@@ -1,5 +1,4 @@
 #!/bin/bash
-# need to modify runuser line if not on ec2 as variables does not parse
 ENDUSER=$(id -u -n 1000)
 GITPATH=/home/$ENDUSER/lazy-loadtest
 sudo yum install docker -y
