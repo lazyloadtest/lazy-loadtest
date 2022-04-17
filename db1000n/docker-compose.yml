@@ -16,7 +16,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:Z
   openvpn-client:
-    image: ghcr.io/wfg/openvpn-client:latest
+    image: ghcr.io/wfg/openvpn-client:2.1.0
     container_name: openvpn-client
     cap_add:
       - NET_ADMIN
