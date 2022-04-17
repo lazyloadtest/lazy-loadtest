@@ -26,8 +26,9 @@ sudo yum update -y
 sudo yum install git -y
 git clone https://github.com/lazyloadtest/lazy-loadtest.git $GITPATH
 chown -R $ENDUSER.$ENDUSER /home/$ENDUSER
+sh $GITPATH/common/docker_setup.sh
 
 # Nothing will happen if you do not uncomment one of these
 #sh $GITPATH/db1000n/db1000n_setup.sh
 #sh $GITPATH/mhddos_proxy/mhddos_setup.sh
-#sh $GITPATH/disbalancer/disbalancer-setup.sh
+#sh $GITPATH/disbalancer/disbalancer_setup.sh
