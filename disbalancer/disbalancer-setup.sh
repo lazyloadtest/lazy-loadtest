@@ -9,7 +9,6 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 mkdir /home/$ENDUSER/secrets
 mkdir -p /home/$ENDUSER/docker/openvpn
-cp $GITPATH/disbalancer/docker-compose.yml /home/$ENDUSER/docker/
 cp $GITPATH/disbalancer/user-crontab /var/spool/cron/$ENDUSER
 cp $GITPATH/vpn/provider_*.conf /home/$ENDUSER/docker/openvpn/
 cp $GITPATH/vpn/provider_secret /home/$ENDUSER/secrets/
