@@ -1,0 +1,57 @@
+version: "3.9"
+services:
+  watchtower:
+    container_name: watchtower
+    restart: always
+    privileged: true
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:Z
+    command: --interval "14400" --cleanup
+  autoheal:
+    container_name: autoheal
+    image: willfarrell/autoheal:1.2.0
+    restart: always
+    privileged: true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:Z
+  openvpn-client:
+    image: ghcr.io/wfg/openvpn-client:2.1.0
+    container_name: openvpn-client
+    cap_add:
+      - NET_ADMIN
+    security_opt:
+      - label:disable
+    restart: unless-stopped
+    volumes:
+      - /dev/net:/dev/net:z
+      - ./openvpn/:/data/vpn:z
+    sysctls:
+      - net.ipv6.conf.all.disable_ipv6=1
+    environment:
+      KILL_SWITCH: "on"
+      HTTP_PROXY: "off"
+      VPN_AUTH_SECRET: provider_secret
+      VPN_CONFIG_PATTERN: provider*.conf
+    secrets:
+      - provider_secret
+    labels:
+        autoheal: "true"
+    healthcheck:
+      test: [ "CMD", "nslookup", "google.com", "8.8.8.8" ]
+      timeout: 10s
+      interval: 30s
+      retries: 3
+  disbalancer:
+    image: disbalancer/liberator:manifest-latest
+    container_name: disbalancer
+    restart: unless-stopped
+    depends_on:
+      openvpn-client:
+        condition: service_healthy
+    network_mode: service:openvpn-client
+    labels:
+        autoheal: "true"
+secrets:
+  provider_secret:
+    file: ~/secrets/provider_secret

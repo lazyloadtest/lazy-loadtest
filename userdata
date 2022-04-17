@@ -27,3 +27,4 @@ chown -R $ENDUSER.$ENDUSER /home/$ENDUSER
 # Nothing will happen if you do not uncomment one of these
 #sh /home/$ENDUSER/lazy-loadtest/db1000n/db1000n_setup.sh
 #sh /home/$ENDUSER/lazy-loadtest/mhddos_proxy/mhddos_setup.sh
+#sh /home/$ENDUSER/lazy-loadtest/disbalancer/disbalancer-setup.sh

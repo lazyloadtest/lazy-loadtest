@@ -22,7 +22,7 @@ A coupon for Digital Ocean can be found following the setup instructions from [h
 ## Next steps
 - Start the process of deploying a cloud VM, paste the contents of the [userdata](userdata) file into the userdata field
 - Deploy the VM
-- **If using db1000n**, log into the VM and update ~/secrets/provider_secret with your VPN password details AND configuration files from your provider
+- **If using db1000n or disbalancer**, log into the VM and update ~/secrets/provider_secret with your VPN password details AND configuration files from your provider
 
 ## Optional
 - Adjust the [userdata](userdata) script to grab the [vpn](/vpn) directroy from your own source and overwrite the example files
