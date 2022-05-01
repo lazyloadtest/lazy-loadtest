@@ -1,6 +1,7 @@
 #!/bin/bash
 ENDUSER=$(id -u -n 1000)
 GITPATH=/home/$ENDUSER/lazy-loadtest
+sudo groupadd docker
 sudo yum install docker -y
 sudo usermod -aG docker $ENDUSER
 sudo systemctl enable docker.service docker.socket
