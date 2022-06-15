@@ -1,1 +1,1 @@
-0 */2 * * * /usr/bin/docker restart openvpn-client db1000n mhddos_proxy_finder >/dev/null 2>&1 # Restart to spread VPN connections to avoid blocks
+0 */2 * * * /usr/bin/docker restart openvpn-client db1000n >/dev/null 2>&1 # Restart to spread VPN connections to avoid blocks
