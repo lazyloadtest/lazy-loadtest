@@ -5,9 +5,9 @@ secrets:
 services:
   watchtower:
     container_name: watchtower
+    image: containrrr/watchtower
     restart: always
     privileged: true
-    image: containrrr/watchtower
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:Z
     command: --interval "14400" --cleanup
@@ -19,8 +19,8 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:Z
   openvpn-client:
-    image: ghcr.io/wfg/openvpn-client:2.1.0
     container_name: openvpn-client
+    image: ghcr.io/wfg/openvpn-client:2.1.0
     cap_add:
       - NET_ADMIN
     security_opt:
@@ -45,4 +45,15 @@ services:
       timeout: 10s
       interval: 30s
       retries: 3
+  mhddos_proxy_finder:
+    container_name: mhddos_proxy_finder
+    image: ghcr.io/porthole-ascend-cinnamon/proxy_finder:latest
+    restart: unless-stopped
+    depends_on:
+      openvpn-client:
+        condition: service_healthy
+    network_mode: service:openvpn-client
+    labels:
+        autoheal: "true"
+    command: --threads 500
 #Add app here

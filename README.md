@@ -22,7 +22,7 @@ A coupon for Digital Ocean can be found following the setup instructions from [h
 ## Next steps
 - Start the process of deploying a cloud VM, paste the contents of the [userdata](userdata) file into the userdata field OR run the [interactive script](interactive_setup.sh) on a VM you have previously deployed.
 - Deploy the VM
-- **If using db1000n or disbalancer**, log into the VM and update ~/secrets/provider_secret with your VPN password details AND configuration files from your provider then restart openvpn-client and the application. e.g. **docker restart openvpn-client db1000n**
+- **If using db1000n or disbalancer**, log into the VM and update ~/secrets/provider_secret with your VPN password details AND configuration files from your provider then restart openvpn-client and the application. e.g. **docker restart openvpn-client db1000n mhddos_proxy_finder**
 
 ## Optional
 - Adjust the [userdata](userdata) OR [interactive](interactive_setup.sh) script to grab the [vpn](/vpn) directroy from your own source and overwrite the example files. See [private_example] for a way to do this with a private git repo
