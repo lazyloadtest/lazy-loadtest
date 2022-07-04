@@ -45,15 +45,4 @@ services:
       timeout: 10s
       interval: 30s
       retries: 3
-  mhddos_proxy_finder:
-    container_name: mhddos_proxy_finder
-    image: ghcr.io/porthole-ascend-cinnamon/proxy_finder
-    restart: unless-stopped
-    depends_on:
-      openvpn-client:
-        condition: service_healthy
-    network_mode: service:openvpn-client
-    labels:
-        autoheal: "true"
-    command: --threads 500
 #Add app here
