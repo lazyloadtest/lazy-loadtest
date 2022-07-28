@@ -35,3 +35,4 @@ sh $GITPATH/common/docker_setup.sh
 #sh $GITPATH/db1000n/db1000n_setup.sh
 #sh $GITPATH/mhddos_proxy/mhddos_setup.sh
 #sh $GITPATH/disbalancer/disbalancer_setup.sh
+#sh $GITPATH/distress/distress_setup.sh

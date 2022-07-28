@@ -37,12 +37,14 @@ Select a loadtest type
 '1)') mhddos_proxy
 '2)') db1000n
 '3)') disbalancer
+'3)') distress
 '0)') Exit "
     read a
     case $a in
 	    1) echo "setting up mhddos" ; sh $GITPATH/mhddos_proxy/mhddos_setup.sh ; exit 0 ;;
 	    2) echo "setting up db1000n" ; sh $GITPATH/db1000n/db1000n_setup.sh ; exit 0 ;;
 	    3) echo "setting up disbalancer" ; sh $GITPATH/disbalancer/disbalancer_setup.sh ; exit 0 ;;
+		4) echo "setting up distress" ; sh $GITPATH/distress/distress_setup.sh ; exit 0 ;;
 		0) exit 0 ;;
 		*) echo -e $red"invalid option."$clear; menu;;
     esac
