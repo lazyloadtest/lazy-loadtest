@@ -31,4 +31,4 @@ A coupon for Digital Ocean can be found following the setup instructions from [h
 After 10 minutes or so you can check the progress of either tool by connecting to the VM and running **docker logs -f _containername_**
 
 
-Slava Ukraini!
+Слава Україні!
